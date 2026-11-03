@@ -1,0 +1,45 @@
+﻿@model IEnumerable<EmpListVM>
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    <h2> Hello!:@Context.Session.GetString("CompanyName")</h2>
+    <h3> <a asp-action="Logout" asp-controller="ManageUsers" asp-area=""> Logout </a></h3>
+    <a asp-action="Index" asp-controller="Products"> Products</a> |
+    <a asp-action="Index" asp-controller="Emps"> Emps </a>
+
+    <h2> Emp List </h2>
+    <a asp-action="Create"> New Emp </a>
+
+    <table>
+        <thead>
+            <tr>
+                <th> Emp ID</th>
+                <th> Emp Name </th>
+                <th> Address </th>
+                <th> Email ID </th>
+                <th> Total Salary </th>
+            </tr>
+        </thead>
+        @foreach (var temp in Model)
+        {
+            <tr>
+                <td>@temp.EmpID</td>
+                <td>@temp.EmpName</td>
+                <td>@temp.Address</td>
+                <td>@temp.EmailID</td>
+                <td>@temp.TotalSalary   </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@temp.EmpID">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@temp.EmpID">Delete</a>
+                </td>
+            </tr>
+
+        }
+    </table>
+
+</body>
+</html>

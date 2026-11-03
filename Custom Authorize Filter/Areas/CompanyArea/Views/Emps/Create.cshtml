@@ -1,0 +1,58 @@
+﻿@model EmpCreateVM
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h2> New Emp </h2>
+    <form method="post" asp-action="Create">
+        <div>
+            <label asp-for="EmpName"></label>
+            <div>
+                <input asp-for="EmpName" />
+            </div>
+        </div>
+
+        <div>
+            <label asp-for="Address"></label>
+            <div>
+                <input asp-for="Address" />
+            </div>
+        </div>
+
+        <div>
+            <label asp-for="EmailID"></label>
+            <div>
+                <input asp-for="EmailID" />
+            </div>
+        </div>
+
+        <div>
+            <label asp-for="Basic"></label>
+            <div>
+                <input asp-for="Basic" />
+            </div>
+        </div>
+
+        <div>
+            <label asp-for="TA"></label>
+            <div>
+                <input asp-for="TA" />
+            </div>
+        </div>
+
+        <div>
+            <label asp-for="HRA"></label>
+            <div>
+                <input asp-for="HRA" />
+            </div>
+        </div>
+        
+
+        <div>
+            <input type="submit" value="Save" />
+        </div>
+    </form>
+</body>
+</html>

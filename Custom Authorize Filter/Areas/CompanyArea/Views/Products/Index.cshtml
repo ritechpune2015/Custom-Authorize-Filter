@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Product>
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+         
+    <h2> Hello!:@Context.Session.GetString("CompanyName")</h2>
+    <h3> <a asp-action="Logout" asp-controller="ManageUsers" asp-area=""> Logout </a></h3>
+    <a asp-action="Index" asp-controller="Products"> Products</a> | 
+    <a asp-action="Index" asp-controller="Emps"> Emps </a>
+
+      <h2> Product List </h2>
+      <a asp-action="Create"> New Product </a>
+   
+        <table>
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th> Product Name </th>
+                    <th> Mfg Name </th>
+                    <th> Price </th>
+                </tr>
+            </thead>
+            @foreach (var temp in Model)
+            {
+              <tr>
+                  <td>@temp.ProductID</td>
+                  <td>@temp.ProductName</td>
+                  <td>@temp.MfgName</td>
+                  <td>@temp.Price</td>
+                  <td>
+                     <a asp-action="Edit" asp-route-id="@temp.ProductID">Edit</a>
+                     <a asp-action="Delete" asp-route-id="@temp.ProductID">Delete</a>
+                </td>
+              </tr>    
+            
+            }
+        </table>
+    
+</body>
+    </html>
